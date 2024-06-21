@@ -19,18 +19,18 @@
                     <Storyboard>
                         <DoubleAnimation Storyboard.TargetProperty="(Control.Background).(RadialGradientBrush.GradientStops)[1].Offset"
                                      To="{l:RND 0.2, 0.6}"
-                                     Duration="0:0:6"
+                                     Duration="{l:TimeDuration {l:RND 10, 20}}"
                                      AutoReverse="True"
                                      RepeatBehavior="Forever"
                                      EasingFunction="{StaticResource CubicEase}"/>
                         <DoubleAnimation Storyboard.TargetProperty="(Control.Background).(RadialGradientBrush.RadiusX)"
                                          To="{l:RND 0.2, 0.6}"
-                                         Duration="0:0:2.7"
+                                         Duration="{l:TimeDuration {l:RND 5, 7}}"
                                          RepeatBehavior="Forever"
                                          EasingFunction="{StaticResource CubicEase}"/>
                         <DoubleAnimation Storyboard.TargetProperty="(Control.Background).(RadialGradientBrush.RadiusY)"
                                          To="{l:RND 0.2, 0.6}"
-                                         Duration="0:0:3.72"
+                                         Duration="{l:TimeDuration {l:RND 5, 7}}"
                                          RepeatBehavior="Forever"
                                          EasingFunction="{StaticResource CubicEase}"/>
                     </Storyboard>
@@ -66,14 +66,14 @@
                         <Storyboard>
                             <DoubleAnimation Storyboard.TargetProperty="(Control.Foreground).(LinearGradientBrush.GradientStops)[0].Offset"
                                              From="-0.5" To="1.5"
-                                             Duration="0:0:3"
+                                             Duration="{l:TimeDuration {l:RND 2, 7}}"
                                              AutoReverse="True"
                                              RepeatBehavior="Forever"
                                              EasingFunction="{StaticResource CubicEase}"/>
 
                             <DoubleAnimation Storyboard.TargetProperty="(Control.Effect).(DropShadowEffect.BlurRadius)"
                                              From="{l:RND 2, 5}" To="{l:RND 7, 10}"
-                                             Duration="0:0:5"
+                                             Duration="{l:TimeDuration {l:RND 3, 8}}"
                                              AutoReverse="True"
                                              RepeatBehavior="Forever"
                                              EasingFunction="{StaticResource CubicEase}"/>
