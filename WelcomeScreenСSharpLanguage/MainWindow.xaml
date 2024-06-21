@@ -1,12 +1,87 @@
 ﻿<Window x:Class="WelcomeScreenСSharpLanguage.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WelcomeScreenСSharpLanguage"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        xmlns:l="clr-namespace:WelcomeScreenСSharpLanguage"
+        Topmost="False"
+        WindowStyle="None"
+        WindowState="Maximized"
+        Title="Screen C Sharp" 
+        Height="450" Width="800">
+    <Window.Resources>
+        <CubicEase x:Key="CubicEase" EasingMode="EaseInOut"/>
+    </Window.Resources>
+    <Border>
+        <Border.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="(Control.Background).(RadialGradientBrush.GradientStops)[1].Offset"
+                                     To="0.3"
+                                     Duration="0:0:6"
+                                     AutoReverse="True"
+                                     RepeatBehavior="Forever"
+                                     EasingFunction="{StaticResource CubicEase}"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(Control.Background).(RadialGradientBrush.RadiusX)"
+                                         To="0.3"
+                                         Duration="0:0:2.7"
+                                         RepeatBehavior="Forever"
+                                         EasingFunction="{StaticResource CubicEase}"/>
+                        <DoubleAnimation Storyboard.TargetProperty="(Control.Background).(RadialGradientBrush.RadiusY)"
+                                         To="0.3"
+                                         Duration="0:0:3.72"
+                                         RepeatBehavior="Forever"
+                                         EasingFunction="{StaticResource CubicEase}"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Border.Triggers>
+        <Border.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="Blue"/>
+                <GradientStop Color="#000010" Offset="1"/>
+            </RadialGradientBrush>
+        </Border.Background>
+        <TextBlock Text="C#" 
+                   FontSize="200"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center">
+            <TextBlock.Foreground>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                    <LinearGradientBrush.Transform>
+                        <RotateTransform Angle="45"></RotateTransform>
+                    </LinearGradientBrush.Transform>
+                    <GradientStop Color="Yellow" Offset="0"/>
+                    <GradientStop Color="Red" Offset="-0.5"/>
+                    <GradientStop Color="Red" Offset="1.5"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+            <TextBlock.Effect>
+                <DropShadowEffect ShadowDepth="0" Color="White" BlurRadius="2"/>
+            </TextBlock.Effect>
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(Control.Foreground).(LinearGradientBrush.GradientStops)[0].Offset"
+                                             From="-0.5" To="1.5"
+                                             Duration="0:0:3"
+                                             AutoReverse="True"
+                                             RepeatBehavior="Forever"
+                                             EasingFunction="{StaticResource CubicEase}"/>
 
-    </Grid>
+                            <DoubleAnimation Storyboard.TargetProperty="(Control.Effect).(DropShadowEffect.BlurRadius)"
+                                             From="5" To="7"
+                                             Duration="0:0:5"
+                                             AutoReverse="True"
+                                             RepeatBehavior="Forever"
+                                             EasingFunction="{StaticResource CubicEase}"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+
+        </TextBlock>
+    </Border>
 </Window>
