@@ -18,18 +18,18 @@
                 <BeginStoryboard>
                     <Storyboard>
                         <DoubleAnimation Storyboard.TargetProperty="(Control.Background).(RadialGradientBrush.GradientStops)[1].Offset"
-                                     To="0.3"
+                                     To="{l:RND 0.2, 0.6}"
                                      Duration="0:0:6"
                                      AutoReverse="True"
                                      RepeatBehavior="Forever"
                                      EasingFunction="{StaticResource CubicEase}"/>
                         <DoubleAnimation Storyboard.TargetProperty="(Control.Background).(RadialGradientBrush.RadiusX)"
-                                         To="0.3"
+                                         To="{l:RND 0.2, 0.6}"
                                          Duration="0:0:2.7"
                                          RepeatBehavior="Forever"
                                          EasingFunction="{StaticResource CubicEase}"/>
                         <DoubleAnimation Storyboard.TargetProperty="(Control.Background).(RadialGradientBrush.RadiusY)"
-                                         To="0.3"
+                                         To="{l:RND 0.2, 0.6}"
                                          Duration="0:0:3.72"
                                          RepeatBehavior="Forever"
                                          EasingFunction="{StaticResource CubicEase}"/>
@@ -72,7 +72,7 @@
                                              EasingFunction="{StaticResource CubicEase}"/>
 
                             <DoubleAnimation Storyboard.TargetProperty="(Control.Effect).(DropShadowEffect.BlurRadius)"
-                                             From="5" To="7"
+                                             From="{l:RND 2, 5}" To="{l:RND 7, 10}"
                                              Duration="0:0:5"
                                              AutoReverse="True"
                                              RepeatBehavior="Forever"
