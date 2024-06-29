@@ -6,10 +6,15 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Img\icons_c-sharp-48.ico</ApplicationIcon>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="Img\icons_c-sharp-48.ico" />
+  </ItemGroup>
+
 	<ItemGroup>
-        <Using Include="WelcomeScreenСSharpLanguage.Extensions"/>
+        <Using Include="WelcomeScreenСSharpLanguage.Extensions" />
 	</ItemGroup>
 
 </Project>
