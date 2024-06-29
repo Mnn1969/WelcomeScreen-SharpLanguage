@@ -47,22 +47,22 @@ public partial class App
             }
             else if (arg.StartsWith("/s", StringComparison.CurrentCultureIgnoreCase))
                 mode = Mode.FullScreen;
+        }
 
-            switch (mode)
-            {
-                case Mode.Configuration:
-                    MessageBox.Show("Конфигурация...");
-                    Shutdown();
-                    return;
+        switch (mode)
+        {
+            case Mode.Configuration:
+                MessageBox.Show("Конфигурация...");
+                Shutdown();
+                return;
 
-                case Mode.Preview:
-                    CreateWindow(parent_handle).Show();
-                    break;
+            case Mode.Preview:
+                CreateWindow(parent_handle).Show();
+                break;
 
-                case Mode.FullScreen:
-                    CreateMainWindos(parent_handle);
-                    break;
-            }
+            case Mode.FullScreen:
+                CreateMainWindos(parent_handle);
+                break;
 
         }
 

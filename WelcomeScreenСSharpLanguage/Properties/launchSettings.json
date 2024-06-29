@@ -1,5 +1,8 @@
 {
   "profiles": {
+    "Default": {
+      "commandName": "Project"
+    },
     "Configure": {
       "commandName": "Project",
       "commandLineArgs": "/c"
