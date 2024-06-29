@@ -11,7 +11,7 @@
     <Window.Resources>
         <CubicEase x:Key="CubicEase" EasingMode="EaseInOut"/>
     </Window.Resources>
-    <Border>
+    <Border Name="MainBorder">
         <Border.Triggers>
             <EventTrigger RoutedEvent="Loaded">
                 <BeginStoryboard>

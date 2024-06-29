@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using System.Windows.Interop;
+using WelcomeScreenСSharpLanguage.API.pInvoke;
 
 namespace WelcomeScreenСSharpLanguage;
 public partial class App
@@ -53,6 +55,7 @@ public partial class App
                     return;
 
                 case Mode.Preview:
+                    CreateWindow(parent_handle).Show();
                     break;
 
                 case Mode.FullScreen:
@@ -76,7 +79,24 @@ public partial class App
             return window;
         }
 
-        return null!;
+        User32.GetClientRect(ParentHandle, out var parent_rect);
+
+        var parent = new HwndSource(new("sourceParams")
+        {
+            PositionX = 0,
+            PositionY = 0,
+            Height = parent_rect.Bottom - parent_rect.Top,
+            Width = parent_rect.Right - parent_rect.Left,
+            ParentWindow = ParentHandle,
+            WindowStyle = (int)(WindowStyles.WS_VISIBLE | WindowStyles.WS_CHILD | WindowStyles.WS_CLIPCHILDREN)
+        })
+        {
+            RootVisual = window.MainBorder
+        };
+
+        parent.Disposed += (_, _) => window.Close();
+
+        return window;
     }
 }
 
