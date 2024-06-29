@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Interop;
+using WelcomeScreenСSharpLanguage.API;
 using WelcomeScreenСSharpLanguage.API.pInvoke;
 
 namespace WelcomeScreenСSharpLanguage;
@@ -59,9 +60,22 @@ public partial class App
                     break;
 
                 case Mode.FullScreen:
+                    CreateMainWindos(parent_handle);
                     break;
             }
 
+        }
+
+    }
+
+    private static void CreateMainWindos(nint ParentHandle)
+    {
+        foreach (var (left, top, width, height) in Screen.AllScreens.Select(s => s.Bounds))
+        {
+            var window = CreateWindow(ParentHandle);
+            (window.Left, window.Top, window.Width, window.Height) = (left, top, width, height);
+
+            window.Show();
         }
 
     }
